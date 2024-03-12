@@ -1,6 +1,5 @@
 import * as Yup from "yup";
 
-// Schema for the dynamic form inputs
 export const DynamicFormSchema = Yup.object({
   firstName: Yup.string()
     .required("First Name is required")
@@ -27,10 +26,6 @@ export const DynamicFormSchema = Yup.object({
     .required("Confirm Password is required")
     .oneOf([Yup.ref("password"), null], "Passwords must match")
     .label("Confirm Password"),
-});
-
-// Schema for the file upload input
-export const FileUploadSchema = Yup.object({
   file: Yup.mixed()
     .required("A file is required")
     .label("File")
