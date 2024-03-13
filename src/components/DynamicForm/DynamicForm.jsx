@@ -26,7 +26,7 @@ export default function DynamicForm() {
       }}
       validateOnBlur={true}
       validateOnChange={false}
-      validateOnMount={false}
+      validateOnMount={true}
     >
       {(formik) => (
         <Form className="dynamic-form" aria-labelledby="form-heading">

@@ -11,7 +11,7 @@ export default function FormField({ label, name, type, id, ...rest }) {
       <Field
         className="dynamic-form__input"
         type={type}
-        id={id}
+        id={id || name}
         name={name}
         {...rest}
       />
