@@ -28,56 +28,67 @@ export default function DynamicForm() {
       validateOnChange={false}
       validateOnMount={true}
     >
-      {(formik) => (
-        <Form className="dynamic-form" aria-labelledby="form-heading">
-          <h2 className="dynamic-form__heading">Sample Form</h2>
+      {(formik) => {
+        console.log(
+          "isValid:",
+          formik.isValid,
+          "isSubmitting:",
+          formik.isSubmitting
+        );
 
-          <FormField
-            label="First Name"
-            name="firstName"
-            type="text"
-            id="firstName"
-            aria-required="true"
-          />
-          <FormField
-            label="Email"
-            name="email"
-            type="email"
-            id="email"
-            aria-required="true"
-          />
-          <FormField
-            label="Password"
-            name="password"
-            type="password"
-            id="password"
-            aria-required="true"
-          />
-          <FormField
-            label="Confirm Password"
-            name="confirmPassword"
-            type="password"
-            id="confirmPassword"
-            aria-required="true"
-          />
+        console.log(formik.errors);
 
-          <FileUpload
-            className="dynamic-form__file-upload"
-            name="file"
-            aria-required="true"
-            formikProps={formik}
-          />
+        return (
+          <Form className="dynamic-form" aria-labelledby="form-heading">
+            <h2 className="dynamic-form__heading">Sample Form</h2>
 
-          <button
-            className="dynamic-form__submit"
-            type="submit"
-            disabled={!formik.isValid || formik.isSubmitting}
-            aria-disabled={!formik.isValid || formik.isSubmitting}
-          >
-            Submit
-          </button>
-        </Form>
-      )}
+            <FormField
+              label="First Name"
+              name="firstName"
+              type="text"
+              id="firstName"
+              aria-required="true"
+            />
+            <FormField
+              label="Email"
+              name="email"
+              type="email"
+              id="email"
+              aria-required="true"
+            />
+            <FormField
+              label="Password"
+              name="password"
+              type="password"
+              id="password"
+              aria-required="true"
+            />
+            <FormField
+              label="Confirm Password"
+              name="confirmPassword"
+              type="password"
+              id="confirmPassword"
+              aria-required="true"
+            />
+
+            <FileUpload
+              className="dynamic-form__file-upload"
+              name="file"
+              aria-required="true"
+              formikProps={formik}
+            />
+
+            <button
+              className="dynamic-form__submit"
+              type="submit"
+              // disabled={!formik.isValid || formik.isSubmitting}
+              aria-disabled={!formik.isValid || formik.isSubmitting}
+            >
+              Submit
+            </button>
+          </Form>
+        );
+      }}
     </Formik>
   );
 }

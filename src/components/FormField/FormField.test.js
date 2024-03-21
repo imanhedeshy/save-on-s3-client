@@ -27,6 +27,4 @@ describe("FormField component", () => {
 
     expect(screen.getByLabelText(/Test Label/i)).toBeInTheDocument();
   });
-
-  // ... other tests
 });
