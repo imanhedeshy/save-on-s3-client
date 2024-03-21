@@ -37,6 +37,6 @@ export const DynamicFormSchema = Yup.object({
     .test(
       "fileType",
       "Unsupported file format. Only JPEG and PNG are allowed",
-      (value) => value && ["image/jpeg", "image/png"].includes(value.type)
+      (value) => value && ["image/jpeg", "image/jpg", "image/png"].includes(value.type)
     ),
 });

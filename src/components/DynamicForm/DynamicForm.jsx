@@ -33,7 +33,9 @@ export default function DynamicForm() {
           "isValid:",
           formik.isValid,
           "isSubmitting:",
-          formik.isSubmitting
+          formik.isSubmitting,
+          "isValidating:",
+          formik.isValidating
         );
 
         console.log(formik.errors);
@@ -81,7 +83,7 @@ export default function DynamicForm() {
             <button
               className="dynamic-form__submit"
               type="submit"
-              // disabled={!formik.isValid || formik.isSubmitting}
+              disabled={!formik.isValid || formik.isSubmitting}
               aria-disabled={!formik.isValid || formik.isSubmitting}
             >
               Submit
